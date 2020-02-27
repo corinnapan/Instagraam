@@ -36,3 +36,81 @@
     transform: rotate(360deg);
   }
 }
+
+/* .imagestream{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}  */
+
+nav{
+
+  list-style:none;
+  display:flex;
+  justify-content:flex-end;
+
+}
+nav .navlinks{
+  display:flex;
+  justify-content: space-between;
+  width:50%;
+  margin-right:10%;
+  
+}
+
+nav li{
+  
+  padding-top:0;
+ 
+  font-size:125%
+
+}
+
+.home {
+  display:flex;
+  font-family: 'Dancing Script' ;
+  font-size: 350%;
+  justify-content: center;
+}
+
+
+.imageWrapper img {
+  
+  display:block;
+  max-width:10%;
+  height:auto;
+}
+
+.actualImages img{
+  display:flex;
+  justify-content: center;
+}
+
+.imagestream{
+  display:flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.usernameTopWrapper{
+  display:flex;
+  justify-content: flex-start;
+  text-align:left;
+}
+.wrapper{
+  text-align:left;
+}
+
+.user-photos{
+  display:flex;
+  justify-content:space-evenly;
+}
+.user-photos .right-column, .user-photos .left-column{
+  display:flex;
+  flex-direction:column;
+}
+.right img{
+  margin-bottom:5%;
+}
+
