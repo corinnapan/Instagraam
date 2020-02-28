@@ -37,32 +37,45 @@
   }
 }
 
-/* .imagestream{
-  display:flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}  */
+.imageWrapper img{
+  margin-top:1%;
+  display:block;
+  height:80px;
+  width:80px;
+  margin-left:20px;
+}
 
 nav{
-
   list-style:none;
   display:flex;
-  justify-content:flex-end;
-
+  justify-content:space-between;
 }
+
+header{
+  height:80px;
+  line-height: 80px;
+}
+
 nav .navlinks{
   display:flex;
   justify-content: space-between;
   width:50%;
-  margin-right:10%;
-  
+  margin-right:5%;
+  margin-top:1%;
+  font-family: 'Verdana' ;
+  font-size: medium;
 }
 
+.navlinks a {
+  font-family: 'Dancing Script';
+  font-size: 140%;
+  text-decoration: none;
+  color:black;
+  font-weight:bold;
+}
 nav li{
   
   padding-top:0;
- 
   font-size:125%
 
 }
@@ -72,19 +85,16 @@ nav li{
   font-family: 'Dancing Script' ;
   font-size: 350%;
   justify-content: center;
+  padding-top:10%
 }
 
 
-.imageWrapper img {
-  
-  display:block;
-  max-width:10%;
-  height:auto;
+.actualImages{
+  width:100%;
 }
 
 .actualImages img{
-  display:flex;
-  justify-content: center;
+  width:100%;
 }
 
 .imagestream{
@@ -100,17 +110,68 @@ nav li{
 }
 .wrapper{
   text-align:left;
+  width:45%;
+  margin: 0 auto 3em auto
+}
+
+.wrapper a{
+  width:100%;
 }
 
 .user-photos{
   display:flex;
   justify-content:space-evenly;
+  width:100%
 }
-.user-photos .right-column, .user-photos .left-column{
-  display:flex;
-  flex-direction:column;
+.user-photos .right-column, .user-photos .left-column, .user-photos .middle-column{
+
+  margin-top:1em;
+  width:100%;
+  object-fit: cover;
 }
 .right img{
   margin-bottom:5%;
 }
 
+.profileimage {
+  border-radius: 50%;
+  margin-bottom: 2.5%;
+  margin-right: 2.5%;
+}
+
+/* image in each column */
+.column{
+  width:30%;
+  display:flex;
+  flex-direction:column;
+}
+
+.userProfileImage{
+  border-radius:50%;
+}
+
+.user-name{
+text-align: center;
+}
+
+.about{
+  font-family: 'Dancing Script';
+  text-align: center;
+  margin-top: 10%;
+  
+}
+.noMatch{
+  text-align: center; 
+}
+@media (max-width:1000px){
+  .home h1{
+    font-size:1em
+  }
+}
+
+
+@media(max-width: 483px){
+  .home h1{
+    font-size: 50%;
+  }
+}

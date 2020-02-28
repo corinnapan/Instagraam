@@ -30,49 +30,68 @@ class UserPage extends Component {
   render() {
     // console.log(this.props.match.params.userid)
     console.log(this.state.userData1)
-    let { name } = this.state.userData1 && this.state.userData1
+    let { name, portfolio_url } = this.state.userData1 && this.state.userData1
+
     console.log(this.state.userPhotos1);
     let rightPhotos = this.state.userPhotos1.length !== 0 && this.state.userPhotos1.map((userPhoto, index) => {
       console.log(userPhoto.urls.raw)
       return (
 
-        (index % 2 === 0 || index === 0) &&
-       
+        (index % 3 === 0 || index === 0) &&
+
         <img
           class="right-column"
-          style={{ width: '400px' }}
           key={index}
           src={userPhoto.urls.raw}
         />
-
       )
     })
     let leftPhotos = this.state.userPhotos1.length !== 0 && this.state.userPhotos1.map((userPhoto, index) => {
       console.log(userPhoto.urls.raw)
       return (
-
-        (index % 2 === 1 && index !== 0 )&&
-       
+        (index % 3 === 1 && index !== 0) &&
         <img
           class="left-column"
-          style={{ width: '400px' }}
           key={index}
           src={userPhoto.urls.raw}
         />
 
       )
     })
-
-
-
+    let middlePhotos = this.state.userPhotos1.length !== 0 && this.state.userPhotos1.map((userPhoto, index) => {
+      console.log(userPhoto.urls.raw)
+      return (
+        (index % 3 === 2 && index !== 0) &&
+        <img
+          class="middle-column"
+          key={index}
+          src={userPhoto.urls.raw}
+        />
+      )
+    })
     return (
-      <div>
-        {name}
+      <div className='user-page'>
+        <div className="user-name">
+          <h2>{name}</h2>
+          <h3>{portfolio_url}</h3>
+           {this.state.userData1.profile_image &&
+       
+            <img 
+            className="userProfileImage"
+            src={this.state.userData1.profile_image.large}
+            />
+          }
+
+        </div>
+
         <div className="user-photos">
-          <div className={"left"}>
+          <div className="column">
             {leftPhotos}
           </div>
-          <div className={"right"}>
+          <div className="column">
+            {middlePhotos}
+          </div>
+          <div className="column">
             {rightPhotos}
           </div>
         </div>
@@ -82,10 +101,4 @@ class UserPage extends Component {
     )
   }
 }
-
-
-
-
-
-
 export default UserPage

@@ -6,6 +6,7 @@ import Header from './components/Header'
 import Home from './components/Home'
 import UserPage from './components/UserPage'
 import NoMatch from './components/NoMatch'
+import About from './components/About'
 import { Route, Switch } from 'react-router-dom'
 
 const API_KEY = process.env.REACT_APP_UNSPLASH_API_KEY
@@ -41,17 +42,10 @@ class App extends Component {
 
     this.setState({
       photos: response.data
-
-
     })
-
-
   }
-
   render() {
     console.log('app.js this.state.photos', this.state.photos)
-
-
     return (
       // <div className="App">
       //   <Stream photoData={this.state.photos}/>
@@ -76,10 +70,16 @@ class App extends Component {
                 <UserPage
                   {...routerProps} />}
           />
-          <Route 
-            path={"*"} 
-            component={NoMatch} 
+          <Route
+            path="/about"
+            component={About}
           />
+          <Route
+            path={"*"}
+            component={NoMatch}
+          />
+
+
 
         </Switch>
 

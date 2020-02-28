@@ -3,7 +3,7 @@ import {NavLink} from 'react-router-dom'
 
 function Header(){
   return(
-    <div>
+    <header>
       <nav>
       <div className="imageWrapper">
       <img
@@ -19,11 +19,11 @@ function Header(){
           </li>
 
           <li>
-            <NavLink to="/random">Random User</NavLink>
+            <NavLink to="/about">About</NavLink>
           </li>
           </div>
         </nav>
-    </div>
+    </header>
   )
 
 }

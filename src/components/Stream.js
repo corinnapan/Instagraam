@@ -7,53 +7,41 @@ class Stream extends Component {
     super(props);
     this.state = {
 
-
     }
   }
-
-
-
   render() {
     console.log(this.props)
-
     const photos = this.props.photoData.length !== 0 && this.props.photoData.map((objectPhoto, index) => {
       return (
-        <div className="imagestream">
-          <div className = "wrapper">
-          <div className="usernameTopWrapper">
-            <p>
-              {objectPhoto.user.username}
-            </p>
-          </div>
-         </div>
-          <Link to={`/users/${objectPhoto.user.username}`}>
-            
-          <div className="actualImages">
-            <img
-              style={{ width: '400px' }}
-              key={index}
-              src={objectPhoto.urls.raw}
-            />
+        <>
+          <div className="wrapper">
+            <div className="usernameTopWrapper">
+              <img className="profileimage"
+              src={objectPhoto.user.profile_image.medium}
+              />
+              <p>
+                {objectPhoto.user.username}
+              </p>
             </div>
-            
-          </Link>
-          
-          <p>{objectPhoto.user.username}
-          </p>
-        </div>
-
+            <div className="actualImages">
+              <Link to={`/users/${objectPhoto.user.username}`}>
+                <img
+                  key={index}
+                  src={objectPhoto.urls.raw}
+                />
+              </Link>
+            </div>
+          </div>
+        </>
       )
-
     })
     return (
       <>
-        {photos}
+        <div className="imagestream">
+          {photos}
+        </div>
       </>
-
-
     )
-
   }
-
 }
 export default Stream; 
